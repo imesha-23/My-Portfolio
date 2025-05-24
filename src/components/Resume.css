@@ -1,0 +1,361 @@
+.resume-section {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  background-color: #0a0a1a; /* Match dark theme background */
+}
+
+/* Target specifically the Resume section title */
+#resume .section-title {
+  position: relative;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Override any other ::after rules with !important */
+#resume .section-title::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 80px !important;
+  height: 4px !important;
+  background: linear-gradient(to right, #10b981, #3b82f6) !important;
+  bottom: -10px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  border-radius: 2px !important;
+  border: none !important;
+}
+
+/* Use the most specific selector for the underline */
+#resume .section-title::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #10b981, #3b82f6);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Delete these conflicting rules */
+/* 
+.dark .section-title {
+  color: var(--text-primary-dark);
+}
+
+.section-title::after {
+  content: none;
+}
+*/
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--primary-gradient);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-weight: 600;
+  margin: 0 auto 3rem;
+  width: fit-content;
+  box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(139, 92, 246, 0.4);
+}
+
+.download-btn.bottom {
+  margin-top: 3rem;
+}
+
+.resume-container {
+  background-color: white;
+  color: #1e293b;
+  border-radius: 10px;
+  padding: 3rem;
+  box-shadow: var(--shadow-dark);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.resume-header {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 2rem;
+}
+
+.resume-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.resume-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.resume-title {
+  flex: 1;
+}
+
+.resume-title h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.resume-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-item {
+  font-size: 0.95rem;
+}
+
+.resume-section {
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.light.resume-section {
+  background-color: #ffffff;
+}
+
+.dark.resume-section {
+  background-color: #0a0a1a;
+}
+
+.resume-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.resume-preview {
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.light .resume-preview {
+  border: 1px solid #e2e8f0;
+}
+
+.dark .resume-preview {
+  border: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.resume-preview iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.resume-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+}
+
+.resume-download:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+}
+
+/* Improve mobile responsiveness for resume section */
+@media (max-width: 768px) {
+  .resume-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .resume-preview {
+    height: 400px;
+  }
+  
+  .resume-download {
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-section {
+    padding: 3rem 1rem;
+  }
+  
+  .resume-preview {
+    height: 350px;
+  }
+  
+  .resume-download {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+.resume-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 0.5rem;
+}
+
+.experience-item, .project-item {
+  margin-bottom: 1.5rem;
+}
+
+.job-title, .project-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.job-period, .project-date {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
+.experience-item ul, .skills-list {
+  padding-left: 1.5rem;
+}
+
+.experience-item li, .skills-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.project-tech {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 2rem;
+  }
+  
+  .resume-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .resume-title h1 {
+    font-size: 2rem; /* Fixed incomplete line */
+  }
+  
+  /* Ensure consistent section title size */
+  #resume .section-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-container {
+    padding: 1.5rem;
+  }
+  
+  .resume-title h1 {
+    font-size: 1.8rem;
+  }
+  
+  .resume-section h2 {
+    font-size: 1.3rem;
+  }
+  
+  /* Consolidated section title styles */
+  #resume .section-title,
+  .resume-title,
+  .section-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 1rem;
+  }
+  
+  .resume-preview {
+    height: 300px;
+  }
+  
+  /* Improve button responsiveness */
+  .download-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Add these styles for the resume preview */
+.resume-preview {
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  margin: 0 auto 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-dark);
+  background-color: #0a0a1a; /* Match dark theme background */
+}
+
+.resume-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* For tablet view */
+@media (max-width: 768px) {
+  .resume-title {
+    font-size: 2.2rem; /* Increased size to match other section titles */
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* For mobile view */
+@media (max-width: 480px) {
+  .resume-title {
+    font-size: 2rem; /* Increased size to match other section titles */
+    margin-bottom: 1rem;
+  }
+}

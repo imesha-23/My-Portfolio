@@ -1,0 +1,56 @@
+.footer {
+  background-color: #0a0a1a; /* Match dark theme background */
+  padding: 3rem 0 2rem; /* Increased top padding to 3rem */
+  margin-top: 0;
+  position: relative;
+  z-index: 10;
+  border-top: none; /* Remove any border that might be causing the line */
+}
+
+.footer.light {
+  background-color: rgba(248, 250, 252, 0.8);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1.5rem; /* Added padding to move text down */
+}
+
+.copyright {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
